@@ -1,0 +1,15 @@
+service: dio-serverless
+frameworkVersion: "3.36.0"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+
+functions:
+  api:
+    handler: src/hello.handler
+    events:
+      - httpApi:
+          path: /
+          method: get
